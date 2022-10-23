@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ESP Stepper Motor Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="topnav" id="news-ticker">
+      <h1>Raiyans Automated Blinds</h1>
+    </div>
+
+    <div>
+      <a
+        class="weatherwidget-io"
+        href="https://forecast7.com/en/40d71n74d01/new-york/?unit=us"
+        data-label_1="CURRENT"
+        data-label_2="WEATHER"
+        data-icons="Climacons Animated"
+        data-mode="Current"
+        data-theme="dark"
+        >New York Weather</a
+      >
+      <script>
+        !(function (d, s, id) {
+          var js,
+            fjs = d.getElementsByTagName(s)[0];
+          if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://weatherwidget.io/js/widget.min.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }
+        })(document, "script", "weatherwidget-io-js");
+      </script>
+    </div>
+    <div class="content">
+      <form>
+        <input
+          type="radio"
+          id="Clockwise"
+          name="direction"
+          value="Clockwise"
+          checked
+        />
+        <label for="Clockwise">Open</label>
+        <input
+          type="radio"
+          id="Anticlockwise"
+          name="direction"
+          value="Anticlockwise"
+        />
+        <label for="Clockwise">Close</label><br /><br /><br />
+        <label for="steps">Enter number of steps:</label>
+        <input
+          type="number"
+          id="steps"
+          name="steps"
+          placeholder="Enter valid numbers only"
+        />
+      </form>
+      <button onclick="submitForm()">Press to rotate</button>
+      <p>Motor state: <span id="motor-state">Stopped</span></p>
+      <p><i id="arrow_icon" class="fas fa-arrow-circle-up"></i></p>
+    </div>
+  </body>
+</html>
